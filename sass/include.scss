@@ -1,0 +1,55 @@
+// COLORS
+$color-facebook: #00F;
+$color-twitter: #AAF;
+$color-instagram: #B71;
+$color-youtube: #F00;
+
+$lightestgray: #DDD;
+$lightergray: #AAA;
+$lightgray: #999;
+$gray: #777;
+$darkgray: #555;
+$darkergray: #333;
+$darkestgray: #111;
+
+$vintagepink: #e88078;
+
+$red: #A00;
+$orange: #F90;
+
+
+
+// EXTEND
+%clearspace-extend {
+	padding: 0px;
+	margin: 0px auto;
+}
+
+
+
+// MIXIN
+@mixin clearspace {
+	padding: 0px;
+	margin: 0px auto;
+} 
+@mixin round($radius: 50%) {
+	border-radius: $radius;
+	-o-border-radius: $radius;
+	-ms-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;	
+}
+@mixin transition($duration: 300ms) {
+	transition: all $duration ease-IN;
+	-o-transition: all $duration ease;
+	-ms-transition: all $duration ease;
+	-moz-transition: all $duration ease;
+	-webkit-transition: all $duration ease;
+}
+@mixin shadow($thickness: 25px) {
+	box-shadow: 0 0 $thickness 1px rgba(#000, 0.15);
+	-o-box-shadow: 0 0 $thickness 1px rgba(#000, 0.2);
+	-ms-box-shadow: 0 0 $thickness 1px rgba(#000, 0.15);
+	-moz-box-shadow: 0 0 $thickness 1px rgba(#000, 0.15);
+	-webkit-box-shadow: 0 0 $thickness 1px rgba(#000, 0.15);
+}

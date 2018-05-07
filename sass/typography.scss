@@ -1,0 +1,46 @@
+/* ========================================================================
+   Component: Typography
+ ========================================================================== */
+
+
+@font-face {
+	font-family: 'Century Gothic Normal';
+	src: url('../fonts/CenturyGothic-N.ttf');
+}
+@font-face {
+	font-family: 'Century Gothic Normal Italic';
+	src: url('../fonts/CenturyGothic-NI.ttf');
+}
+@font-face {
+	font-family: 'Century Gothic Bold';
+	src: url('../fonts/CenturyGothic-B.ttf');
+}
+@font-face {
+	font-family: 'Century Gothic Bold Italic';
+	src: url('../fonts/CenturyGothic-BI.ttf');
+}
+
+
+
+html, body {
+	font-family: "Century Gothic Normal";
+}
+
+
+
+.font-default {
+	font-family: 'Open Sans', sans-serif;
+}
+.font-normal {
+	font-family: 'Century Gothic Normal', sans-serif;
+}
+.font-italic {
+	font-family: "Century Gothic Normal Italic", sans-serif;
+}
+.font-bold {
+	font-family: "Century Gothic Bold", sans-serif;
+}
+.font-bold-italic {
+	font-family: "Century Gothic Bold Italic", sans-serif;
+}
+

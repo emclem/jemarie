@@ -1,0 +1,118 @@
+@import "include";
+
+
+// DEFAULT
+body {
+	@extend %clearspace-extend;
+	@include transition();
+	width: 100%;
+	font-size: 16px;
+	line-height: 1.5em;
+	color: #FFF;
+	background: url("../images/background.jpg") #000 no-repeat center center fixed;
+	background-size: auto;
+	overflow-x: hidden;
+}
+ul, li {
+	@extend %clearspace-extend;
+	list-style: none;
+}
+h1 { font-size: 3em; }
+h2 { font-size: 2.5em; }
+h3 { font-size: 2em; }
+h4 { font-size: 1.75em; }
+h5 { font-size: 1.5em; }
+h6 { font-size: 1.25em; }
+a {
+	@include transition();
+	color: $red;
+	text-decoration: underline;
+	&:hover {
+		color: $orange;
+		text-decoration: none;
+	}
+}
+
+
+
+// TITLE
+$title-content-spacer: 90px;
+.title-content {
+	@extend %clearspace-extend;
+	@include transition();
+	width: 100%;
+	.titlenav {
+		@extend %clearspace-extend;
+		padding: 60px 0px $title-content-spacer 0px;
+		li {
+			display: inline-block;
+			a {
+				@include round(5px);
+				@include transition();
+				color: #FFF;
+				text-decoration: none;
+				margin: 4px;
+				padding: 8px 12px;
+				&.active {
+					background: rgba($vintagepink, 1);
+				}
+				&:hover {
+					background: rgba(#FFF, 0.2);
+				}
+			}
+		}
+	}
+	.logo {
+		width: 50%;
+		min-width: 300px;
+		max-width: 1500px;
+		padding: 25px 0px;
+		img { width: 100%; }
+	}
+	.title {
+		font-size: 1.3em;
+	}
+	.socialmedia {
+		padding: $title-content-spacer 0px ($title-content-spacer * 2) 0px;
+		hr {
+			width: 30%;
+			border-bottom: solid 1px rgba(#FFF, 1);
+		}
+		a {
+			@include transition();
+			padding: 0px;
+			font-size: 1.5em;
+			color: #FFF;
+			&:hover { padding: 0px 5px; }
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// MEDIA QUERY
+@media (min-width: 1200px) { // LG
+
+}
+@media (min-width: 992px) and (max-width: 1199px) { // MD
+
+}
+@media (min-width: 768px) and (max-width: 991px) { // SM
+
+}
+@media (max-width: 767px) { // XS
+
+}
