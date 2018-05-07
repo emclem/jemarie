@@ -24,6 +24,7 @@
 
 html, body {
 	font-family: "Century Gothic Normal";
+	text-transform: uppercase;
 }
 
 
@@ -34,10 +35,10 @@ html, body {
 .font-normal {
 	font-family: 'Century Gothic Normal', sans-serif;
 }
-.font-italic {
+.font-italic, i {
 	font-family: "Century Gothic Normal Italic", sans-serif;
 }
-.font-bold {
+.font-bold, b {
 	font-family: "Century Gothic Bold", sans-serif;
 }
 .font-bold-italic {

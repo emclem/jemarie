@@ -1,8 +1,10 @@
 // COLORS
 $color-facebook: #00F;
-$color-twitter: #AAF;
+$color-twitter: #5AE;
 $color-instagram: #B71;
 $color-youtube: #F00;
+$color-behance: #93B;
+$color-linkedin: #07B;
 
 $lightestgray: #DDD;
 $lightergray: #AAA;
@@ -14,6 +16,8 @@ $darkestgray: #111;
 
 $vintagepink: #e88078;
 
+$purple: #96007f;
+$maroon: #96004f;
 $red: #A00;
 $orange: #F90;
 
@@ -52,4 +56,11 @@ $orange: #F90;
 	-ms-box-shadow: 0 0 $thickness 1px rgba(#000, 0.15);
 	-moz-box-shadow: 0 0 $thickness 1px rgba(#000, 0.15);
 	-webkit-box-shadow: 0 0 $thickness 1px rgba(#000, 0.15);
+}
+@mixin textshadow($thickness: 3px, $opacity: 0.3) {
+	text-shadow: 1px 1px $thickness rgba(#000, $opacity);
+	-o-text-shadow: 1px 1px $thickness rgba(#000, $opacity);
+	-ms-text-shadow: 1px 1px $thickness rgba(#000, $opacity);
+	-moz-text-shadow: 1px 1px $thickness rgba(#000, $opacity);
+	-webkit-text-shadow: 1px 1px $thickness rgba(#000, $opacity);
 }
