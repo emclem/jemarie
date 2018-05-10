@@ -15,7 +15,10 @@ $darkergray: #333;
 $darkestgray: #111;
 
 $vintagepink: #e88078;
-
+$lightpink: #fce1d6;
+$paleteal: #b3c6c1;
+$lightbrown: #ebd4a9;
+$bluegreen: #11515c;
 $purple: #96007f;
 $maroon: #96004f;
 $red: #A00;
@@ -50,12 +53,19 @@ $orange: #F90;
 	-moz-transition: all $duration ease;
 	-webkit-transition: all $duration ease;
 }
-@mixin shadow($thickness: 25px) {
-	box-shadow: 0 0 $thickness 1px rgba(#000, 0.15);
-	-o-box-shadow: 0 0 $thickness 1px rgba(#000, 0.2);
-	-ms-box-shadow: 0 0 $thickness 1px rgba(#000, 0.15);
-	-moz-box-shadow: 0 0 $thickness 1px rgba(#000, 0.15);
-	-webkit-box-shadow: 0 0 $thickness 1px rgba(#000, 0.15);
+@mixin glow($color: #FFF, $thickness: 25px, $opacity: 0.2) {
+	box-shadow: 0 0 $thickness 1px rgba($color, $opacity);
+	-o-box-shadow: 0 0 $thickness 1px rgba($color, $opacity);
+	-ms-box-shadow: 0 0 $thickness 1px rgba($color, $opacity);
+	-moz-box-shadow: 0 0 $thickness 1px rgba($color, $opacity);
+	-webkit-box-shadow: 0 0 $thickness 1px rgba($color, $opacity);
+}
+@mixin shadow($thickness: 25px, $opacity: 0.2) {
+	box-shadow: 0 0 $thickness 1px rgba(#000, $opacity);
+	-o-box-shadow: 0 0 $thickness 1px rgba(#000, $opacity);
+	-ms-box-shadow: 0 0 $thickness 1px rgba(#000, $opacity);
+	-moz-box-shadow: 0 0 $thickness 1px rgba(#000, $opacity);
+	-webkit-box-shadow: 0 0 $thickness 1px rgba(#000, $opacity);
 }
 @mixin textshadow($thickness: 3px, $opacity: 0.3) {
 	text-shadow: 1px 1px $thickness rgba(#000, $opacity);
@@ -63,4 +73,11 @@ $orange: #F90;
 	-ms-text-shadow: 1px 1px $thickness rgba(#000, $opacity);
 	-moz-text-shadow: 1px 1px $thickness rgba(#000, $opacity);
 	-webkit-text-shadow: 1px 1px $thickness rgba(#000, $opacity);
+}
+@mixin skewY($deg: 3deg) {
+	-webkit-transform: skewY($deg);
+	-moz-transform: skewY($deg);
+	-ms-transform: skewY($deg);
+	-o-transform: skewY($deg);
+	transform: skewY($deg);
 }

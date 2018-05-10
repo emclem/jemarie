@@ -8,8 +8,7 @@ body {
 	width: 100%;
 	font-size: 16px;
 	line-height: 1.5em;
-	color: #FFF;
-	background: url("../images/background.jpg") #000 no-repeat center center fixed;
+	color: $darkgray;
 	background-size: auto;
 	overflow-x: hidden;
 }
@@ -33,178 +32,264 @@ a {
 	}
 }
 .content-full { @extend %clearspace-extend; }
-.content-padded-lg { padding: 50px; }
-.content-padded-md { padding: 30px; }
-.content-padded-sm { padding: 15px; }
-.content-padded-xs { padding: 5px; }
-
-
-
-
-// TITLE
-$top-transition-speed: 1800ms;
-$title-content-height-lg: 800px;
-$title-content-height-add: 200px;
-.title-content {
-	@extend %clearspace-extend;
-	@include transition($top-transition-speed);
-	width: 100%;
-	height: $title-content-height-lg;
-	top: 0px;
-	.titlenav {
-		@extend %clearspace-extend;
-		padding: 40px 0px 15px 0px;
-		li {
-			display: inline-block;
-			a {
-				@include round(5px);
-				@include transition();
-				color: #FFF;
-				text-decoration: none;
-				margin: 2px;
-				padding: 6px 8px;
-				&:hover {
-					background: rgba(#FFF, 0.2);
-				}
-			}
-			&.active a {
-				background: rgba($vintagepink, 1);
-				&:hover {
-					background: rgba($vintagepink + 20, 1);
-				}
-			}
-		}
-	}
-	.logo {
-		width: 50%;
-		min-width: 300px;
-		max-width: 1500px;
-		padding: 20px 0px;
-		img { width: 100%; }
-	}
-	.title {
-		font-size: 1.3em;
-	}
-	.bar {
-		width: 30%;
-		min-width: 200px;
-		max-width: 1100px;
-		padding: 20px 0px;
-		img { width: 100%; }
-	}
-	.socialmedia {
-		padding: 10px 0px 30px 0px;
-		hr {
-			@extend %clearspace-extend;
-			@include transition();
-			width: 20%;
-			min-width: 230px;
-			max-width: 300px;
-			border-bottom: solid 1px rgba(#FFF, 1);
-		}
-		.icons {
-			padding: 15px 0px 0px 0px;
-			a {
-				@include transition();
-				@include round(4px);
-				font-size: 1.5em;
-				color: #FFF;
-				margin: 2px;
-				&:hover {
-					padding: 5px 8px; margin: 5px;
-					background: #FFF;
-				}
-			}
-			.icon-fb:hover { color: $color-facebook; }
-			.icon-tw:hover { color: $color-twitter; }
-			.icon-in:hover { color: $color-instagram; }
-			.icon-yt:hover { color: $color-youtube; }
-			.icon-be:hover { color: $color-behance; }
-			.icon-li:hover { color: $color-linkedin; }
-		}
-	}
-	.arrowdown {
-		@include transition();
-		font-size: 3em;
-		color: rgba(#FFF, 0.5);
-		&:hover { color: rgba(#FFF, 0.75); }
-	}
-}
-.title-content-scrolled {
-	margin-top: -($title-content-height-lg);
-	height: $title-content-height-lg + $title-content-height-add;
-}
-
-
-
+.content-padding-xl { padding: 80px; }
+.content-padding-lg { padding: 50px; }
+.content-padding-md { padding: 30px; }
+.content-padding-sm { padding: 15px; }
+.content-padding-xs { padding: 5px; }
+.width-xs { width: 10%; }
+.width-sm { width: 20%; }
+.width-md { width: 40%; }
+.width-lg { width: 60%; }
+.width-xl { width: 80%; }
+.width-full { width: 100%; }
+.spacer-xs { height: 20px; width: 100%; }
+.spacer-sm { height: 40px; width: 100%; }
+.spacer-md { height: 70px; width: 100%; }
+.spacer-lg { height: 100px; width: 100%; }
+.spacer-xl { height: 130px; width: 100%; }
 
 
 
 // HEADER
-$header-height: 60px;
+$header-height: 160px;
+$header-height-scrolled: 60px;
+$header-circle-radius: 600px;
 header {
-	@extend %clearspace-extend;
-	@include transition($top-transition-speed/2);
-	@include shadow();
 	position: fixed;
+	top: 0px;
 	width: 100%;
-	height: $header-height;
-	line-height: $header-height;
-	border-bottom: solid 1px rgba(#000, 0.4);
-	background: rgba(#000, 0.5);
-	top: -($header-height * 2);
-	font-size: 0.8em;
-	z-index: 99999999999;
-	overflow: hidden;
-	.logo {
-		img {
-			min-width: 200px;
-			width: 70%;
-		}
-	}
-	.navigation {
-		text-align: right;
-		li {
+	z-index: 999;
+	.header-main {
+		position: absolute;
+		top: 0px;
+		z-index: 998;
+		ul li {
+			@include transition();
+			line-height: $header-height;
 			display: inline-block;
+			font-size: 1.25em;
 			a {
 				@include round(5px);
-				@include transition();
 				color: #FFF;
 				text-decoration: none;
-				margin: 2px;
-				padding: 6px 8px;
-				&:hover {
-					background: rgba(#FFF, 0.2);
-				}
-			}
-			&.active a {
-				background: rgba($vintagepink, 1);
-				&:hover {
-					background: rgba($vintagepink + 20, 1);
+				padding: 10px 20px;
+				&:hover { background: rgba(#FFF, 0.4); }
+				&.active {
+					color: $bluegreen;
+					background: #FFF;
+					&:hover { background: #FFF; }
 				}
 			}
 		}
 	}
+	.header-circle {
+		@include round();
+		@include transition(1500ms);
+		position: absolute;
+		top: -($header-circle-radius/2);
+		right: -($header-circle-radius/4);
+		width: $header-circle-radius;
+		height: $header-circle-radius;
+		background: $lightpink;
+		z-index: 997;
+	}
+	.header-bg {
+		@include skewY(-3deg);
+		@include transition(1000ms);
+		position: absolute;
+		height: $header-height * 2;
+		top: -($header-height);
+		left: 0px;
+		width: 100%;
+		z-index: 996;
+		background: $bluegreen;
+	}
 }
-.header-scrolled {
-	top: 0px;
+.header-scrolled-first {
+	.header-main {
+		ul li {
+			line-height: $header-height-scrolled;
+			font-size: 0.9em;
+			a { padding: 5px 10px; }
+		}
+	}
+	.header-circle {
+		top: -($header-circle-radius/1.5);
+		right: -($header-circle-radius/2.5);
+	}
+	.header-bg {
+		@include skewY(0deg);
+		top: 0px;
+		height: $header-height-scrolled;
+	}
 }
-
-
-
-
-
-// CONTENT - ABOUT ME
-.aboutme {
-	background: url("../images/about.jpg") #FFF no-repeat center bottom;
-	height: 730px;
-	.aboutme-main {
-		color: #000;
-		text-align: right;
-		padding: 0px 20px;
+.header-scrolled-second {
+	.header-main {
+		ul li {
+			line-height: $header-height-scrolled;
+			font-size: 0.9em;
+			a { padding: 5px 10px; }
+		}
+	}
+	.header-circle {
+		top: -($header-circle-radius/1.15);
+		right: -($header-circle-radius/3);
+	}
+	.header-bg {
+		@include skewY(0deg);
+		top: 0px;
+		height: $header-height-scrolled;
 	}
 }
 
+
+
+
+// HOME / TITLE
+$home-height: 800px;
+$home-circle-radius: 650px;
+.home {
+	position: relative;
+	height: $home-height;
+	.home-content {
+		position: absolute;
+		top: $home-height/3.2;
+		height: $home-height;
+		width: 100%;
+		text-align: center;
+		z-index: 99;
+		.logo {
+			width: 100%;
+			text-align: center;
+			padding-bottom: 20px;
+			img { width: 40%; }
+		}
+		hr {
+			width: 25%;
+			border-color: $lightestgray;
+		}
+		.socialmedia {
+			width: 100%;
+			text-align: center;
+			font-size: 1.5em;
+			a {
+				@include round(5px);
+				color: $lightergray;
+				&:hover {
+					padding: 8px 10px;
+					margin: 8px;
+					color: #FFF;
+				}
+				&.socialmedia-fb:hover { background: $color-facebook; }
+				&.socialmedia-in:hover { background: $color-instagram; }
+				&.socialmedia-tw:hover { background: $color-twitter; }
+				&.socialmedia-yt:hover { background: $color-youtube; }
+				&.socialmedia-be:hover { background: $color-behance; }
+				&.socialmedia-li:hover { background: $color-linkedin; }
+			}
+		}
+	}
+	.home-shape1 {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		height: 800px;
+		width: 234px;
+		background: url("../images/shape1.png") no-repeat center center;
+		z-index: 98;
+	}
+	.home-shape2 {
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		height: 386px;
+		width: 377px;
+		background: url("../images/shape2.png") no-repeat center center;
+		z-index: 97;
+	}
+	.home-shape3 {
+		position: absolute;
+		bottom: 0px;
+		right: 0px;
+		height: 253px;
+		width: 431px;
+		background: url("../images/shape3.png") no-repeat center center;
+		z-index: 96;
+	}
+	.home-circle {
+		@include transition();
+		@include round();
+		position: absolute;
+		bottom: -($home-circle-radius/1.6);
+		left: -($home-circle-radius/6);
+		background: $lightbrown;
+		height: $home-circle-radius;
+		width: $home-circle-radius;
+	}
+}
+
+
+
+
+// ABOUT
+.about {
+	position: relative;
+	z-index: 1;
+	.about-hello {
+		padding-top: 30px;
+		padding-bottom: 30px;
+		text-align: right;
+	}
+	.about-video {
+		position: relative;
+		background: #FFF;
+		min-height: 300px;
+		.about-content {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			z-index: 100;
+			width: 100%;
+		}
+		.video-container {
+			#video-background {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
+
+
+
+// PORTFOLIO
+.portfolio {
+	.potfolio-list {
+		font-size: 0.9em;
+		li {
+			float: left;
+			a {
+				text-decoration: none;
+				color: #FFF;
+				background: $darkergray;
+				padding: 3px 8px;
+				margin-right: 1px;
+				&:hover {
+					background: $gray;
+				}
+				&.active {
+					background: $vintagepink;
+					color: #000;
+				}
+			}
+		}
+	}
+	.thumb {
+		background: $darkergray;
+		img { width: 100%; }
+	}
+}
 
 
 
